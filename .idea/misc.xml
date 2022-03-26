@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/WindoWss/Src-Team/app/src/main/res/drawable/edit_background.xml" value="0.151" />
+        <entry key="..\:/Users/WindoWss/Src-Team/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.151" />
         <entry key="..\:/Users/WindoWss/Src-Team/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/WindoWss/Src-Team/app/src/main/res/layout/fragment_advert.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/WindoWss/Src-Team/app/src/main/res/layout/fragment_create.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/WindoWss/Src-Team/app/src/main/res/layout/fragment_create.xml" value="0.33" />
         <entry key="..\:/Users/WindoWss/Src-Team/app/src/main/res/layout/fragment_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/WindoWss/Src-Team/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/WindoWss/Src-Team/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
