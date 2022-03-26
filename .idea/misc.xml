@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/WindoWss/SrcTeam/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/WindoWss/SrcTeam/app/src/main/res/layout/fragment_advert.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/WindoWss/SrcTeam/app/src/main/res/layout/fragment_create.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/WindoWss/SrcTeam/app/src/main/res/layout/fragment_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/WindoWss/SrcTeam/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/WindoWss/SrcTeam/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/WindoWss/SrcTeam/app/src/main/res/layout/fragment_third.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/WindoWss/SrcTeam/app/src/main/res/layout/fragment_third2.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

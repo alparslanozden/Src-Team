@@ -22,5 +22,5 @@ class AdvertFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_advert, container, false)
     }
 
-   
+
 }
