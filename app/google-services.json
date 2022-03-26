@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "444638150886",
+    "project_id": "src-team",
+    "storage_bucket": "src-team.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444638150886:android:4f5aaf01771b198d9abb27",
+        "android_client_info": {
+          "package_name": "com.asimodabas.src_team"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444638150886-2fv628tfri2oh1qle0ju32m0kibs204r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsQ3OX-zjkzj33X6pun08VlKOpQylJSTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444638150886-2fv628tfri2oh1qle0ju32m0kibs204r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
