@@ -11,69 +11,56 @@
         android:background="@drawable/background"
         tools:context=".LoginFragment">
 
-        <ImageView
-            android:id="@+id/userImageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="85dp"
-            android:src="@android:drawable/ic_menu_add"
+        <EditText
+            android:id="@+id/loginEmailEditText"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text.CenterStacked"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="132dp"
+            android:ems="10"
+            android:hint="E-Mail"
+            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/usernameEditText"
+            android:id="@+id/loginPasswordEditText"
             style="@style/MaterialAlertDialog.MaterialComponents.Title.Text.CenterStacked"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="41dp"
-            android:ems="10"
-            android:hint="Kullanıcı Adı"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userImageView" />
-
-        <EditText
-            android:id="@+id/passwordEditText"
-            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text.CenterStacked"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
             android:ems="10"
             android:hint="Şifre"
-            android:inputType="textPersonName"
+            android:inputType="textPersonName|textPassword"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/usernameEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/loginEmailEditText" />
 
         <Button
             android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="68dp"
             android:backgroundTint="@color/purple_500"
             android:text="giriş yap"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/createButton"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/loginPasswordEditText" />
 
         <Button
             android:id="@+id/createButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="68dp"
             android:backgroundTint="@color/purple_500"
             android:text="kayıt ol"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+            app:layout_constraintStart_toEndOf="@+id/loginButton"
+            app:layout_constraintTop_toBottomOf="@+id/loginPasswordEditText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
