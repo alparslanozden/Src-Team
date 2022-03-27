@@ -49,5 +49,9 @@
     <fragment
         android:id="@+id/advertFragment"
         android:name="com.asimodabas.src_team.AdvertFragment"
-        android:label="AdvertFragment" />
+        android:label="AdvertFragment" >
+        <action
+            android:id="@+id/action_advertFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
 </navigation>

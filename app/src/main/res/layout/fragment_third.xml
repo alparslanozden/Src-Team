@@ -12,25 +12,58 @@
         tools:context=".ThirdFragment">
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="200dp"
-            android:layout_height="175dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/searchImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="108dp"
+            android:background="@drawable/edit_background"
+            app:layout_constraintBottom_toTopOf="@+id/findImageView"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/agreement" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/findImageView"
             android:layout_width="200dp"
-            android:layout_height="175dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="86dp"
+            android:background="@drawable/edit_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/searchImageView"
             app:srcCompat="@drawable/running" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="200dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="117dp"
+            android:layout_marginEnd="94dp"
+            android:background="@color/white"
+            android:text="Oyuncu Arıyorum"
+            android:textAlignment="center"
+            android:textColor="#2196F3"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchImageView" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="200dp"
+            android:layout_height="25dp"
+            android:background="@color/white"
+            android:text="Oynamak İstiyorum"
+            android:textAlignment="center"
+            android:textColor="#2196F3"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/findImageView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
