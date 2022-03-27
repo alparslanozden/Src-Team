@@ -45,18 +45,25 @@ class CreateFragment : Fragment() {
 
         fcreateButton.setOnClickListener {
 
-            firebaseSaver()
+            if (
+                nameEditText.text.toString() != null &&
+                surnameEditText.text.toString() != null &&
+                emailEditText.text.toString() != null &&
+                passwordEditText.text.toString() != null
+            ) {
+                firebaseSaver()
 
-            auth.createUserWithEmailAndPassword(
-                emailEditText.text.toString(),
-                passwordEditText.text.toString()
-            ).addOnSuccessListener {
+                auth.createUserWithEmailAndPassword(
+                    emailEditText.text.toString(),
+                    passwordEditText.text.toString()
+                ).addOnSuccessListener {
 
-                val action = CreateFragmentDirections.actionCreateFragmentToSecondFragment()
-                findNavController().navigate(action)
+                    val action = CreateFragmentDirections.actionCreateFragmentToSecondFragment()
+                    findNavController().navigate(action)
 
-            }.addOnFailureListener {
-                Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener {
+                    Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
@@ -95,7 +102,7 @@ class CreateFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId==R.id.account_item){
+        if (item.itemId == R.id.account_item) {
             val action = CreateFragmentDirections.actionCreateFragmentToProfileFragment()
             findNavController().navigate(action)
         }

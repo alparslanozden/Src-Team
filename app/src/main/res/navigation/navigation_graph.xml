@@ -73,10 +73,18 @@
         <action
             android:id="@+id/action_advertFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_advertFragment_to_mapsActivity"
+            app:destination="@id/mapsActivity" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.asimodabas.src_team.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <activity
+        android:id="@+id/mapsActivity"
+        android:name="com.asimodabas.src_team.MapsActivity"
+        android:label="activity_maps"
+        tools:layout="@layout/activity_maps" />
 </navigation>

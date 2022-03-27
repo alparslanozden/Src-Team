@@ -33,6 +33,10 @@ class AdvertFragment : Fragment() {
             val action = AdvertFragmentDirections.actionAdvertFragmentToSearchFragment()
             findNavController().navigate(action)
         }
+        locationButton.setOnClickListener {
+            val action = AdvertFragmentDirections.actionAdvertFragmentToMapsActivity()
+            findNavController().navigate(action)
+        }
 
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
