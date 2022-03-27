@@ -2,17 +2,30 @@ package com.asimodabas.src_team
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_advert.*
+import kotlinx.android.synthetic.main.fragment_create.*
 
 
 class AdvertFragment : Fragment() {
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setHasOptionsMenu(true)
+
+        auth = Firebase.auth
+        firestore = Firebase.firestore
 
     }
 
@@ -39,12 +52,14 @@ class AdvertFragment : Fragment() {
         }
 
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId==R.id.account_item){
+        if (item.itemId == R.id.account_item) {
             val action = AdvertFragmentDirections.actionAdvertFragmentToProfileFragment()
             findNavController().navigate(action)
         }
         return super.onOptionsItemSelected(item)
     }
+
 
 }

@@ -15,6 +15,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_advert.*
 import kotlinx.android.synthetic.main.fragment_create.*
 
 class CreateFragment : Fragment() {
@@ -79,6 +80,11 @@ class CreateFragment : Fragment() {
             val email = it.email
             val gender = radioGroup.checkedRadioButtonId
             val date = FieldValue.serverTimestamp()
+            //  val address = editTextTextPersonName2.text.toString()
+            //  val clock = editTextTextPersonName4.text.toString()
+            //  val Activtiydate = editTextTextPersonName3.text.toString()
+            //  val SearchActivity = editTextTextPersonName5.text.toString()
+            //  val Notes = editTextTextPersonName6.text.toString()
 
             val dataMap = HashMap<String, Any>()
             dataMap.put("name", name)
@@ -86,6 +92,11 @@ class CreateFragment : Fragment() {
             dataMap.put("email", email!!)
             dataMap.put("gender", gender)
             dataMap.put("date", date)
+            // dataMap.put("adres",address)
+            // dataMap.put("clock",clock)
+            // dataMap.put("Activtiydate",Activtiydate)
+            // dataMap.put("SearchActivity",SearchActivity)
+            // dataMap.put("Notes",Notes)
 
             firestore.collection("Records").add(dataMap).addOnSuccessListener {
 
@@ -93,6 +104,11 @@ class CreateFragment : Fragment() {
                 surnameEditText.setText("")
                 emailEditText.setText("")
                 passwordEditText.setText("")
+                // editTextTextPersonName2.setText("")
+                // editTextTextPersonName4.setText("")
+                // editTextTextPersonName6.setText("")
+                // editTextTextPersonName3.setText("")
+                // editTextTextPersonName5.setText("")
                 radioGroup.clearCheck()
 
             }.addOnFailureListener {
