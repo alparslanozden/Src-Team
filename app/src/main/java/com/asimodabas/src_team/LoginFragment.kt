@@ -1,8 +1,10 @@
 package com.asimodabas.src_team
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -21,7 +23,16 @@ class LoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setHasOptionsMenu(true)
+
         auth = Firebase.auth
+
+        //Remember username password
+
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            val action = LoginFragmentDirections.actionLoginFragmentToSecondFragment()
+            findNavController().navigate(action)        }
     }
 
     override fun onCreateView(
@@ -47,7 +58,6 @@ class LoginFragment : Fragment() {
                 ).show()
             } else {
 
-
                 auth.signInWithEmailAndPassword(
                     loginEmailEditText.text.toString(),
                     loginPasswordEditText.text.toString()
@@ -72,7 +82,13 @@ class LoginFragment : Fragment() {
         }
 
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId==R.id.account_item){
+            val action = LoginFragmentDirections.actionLoginFragmentToProfileFragment()
+            findNavController().navigate(action)
+        }
+        return super.onOptionsItemSelected(item)
+    }
     override fun onDestroyView() {
         super.onDestroyView()
     }

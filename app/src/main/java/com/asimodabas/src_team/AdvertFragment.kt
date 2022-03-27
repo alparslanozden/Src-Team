@@ -1,10 +1,8 @@
 package com.asimodabas.src_team
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_advert.*
 
@@ -14,7 +12,10 @@ class AdvertFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setHasOptionsMenu(true)
+
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +34,13 @@ class AdvertFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId==R.id.account_item){
+            val action = AdvertFragmentDirections.actionAdvertFragmentToProfileFragment()
+            findNavController().navigate(action)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }

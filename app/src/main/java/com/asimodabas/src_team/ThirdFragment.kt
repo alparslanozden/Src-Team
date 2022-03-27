@@ -3,6 +3,7 @@ package com.asimodabas.src_team
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
@@ -12,6 +13,8 @@ class ThirdFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setHasOptionsMenu(true)
 
     }
 
@@ -37,6 +40,13 @@ class ThirdFragment : Fragment() {
 
         }
 
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId==R.id.account_item){
+            val action = ThirdFragmentDirections.actionThirdFragmentToProfileFragment()
+            findNavController().navigate(action)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
