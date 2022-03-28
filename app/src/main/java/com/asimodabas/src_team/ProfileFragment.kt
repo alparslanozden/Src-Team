@@ -18,7 +18,7 @@ class ProfileFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        db= Firebase.firestore
+        db = Firebase.firestore
 
     }
 
@@ -34,10 +34,5 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
     }
-
-
-
-
-
 
 }

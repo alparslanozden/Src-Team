@@ -30,9 +30,10 @@ class LoginFragment : Fragment() {
         //Remember username password
 
         val currentUser = auth.currentUser
-        if(currentUser != null){
+        if (currentUser != null) {
             val action = LoginFragmentDirections.actionLoginFragmentToSecondFragment()
-            findNavController().navigate(action)        }
+            findNavController().navigate(action)
+        }
     }
 
     override fun onCreateView(
@@ -82,13 +83,15 @@ class LoginFragment : Fragment() {
         }
 
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId==R.id.account_item){
+        if (item.itemId == R.id.account_item) {
             val action = LoginFragmentDirections.actionLoginFragmentToProfileFragment()
             findNavController().navigate(action)
         }
         return super.onOptionsItemSelected(item)
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
     }

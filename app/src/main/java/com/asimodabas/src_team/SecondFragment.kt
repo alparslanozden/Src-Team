@@ -43,10 +43,10 @@ class SecondFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId==R.id.account_item){
+        if (item.itemId == R.id.account_item) {
             val action = SecondFragmentDirections.actionSecondFragmentToProfileFragment()
             findNavController().navigate(action)
-            }
+        }
         return super.onOptionsItemSelected(item)
     }
 

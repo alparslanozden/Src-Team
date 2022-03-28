@@ -30,7 +30,7 @@ class ThirdFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         searchImageView.setOnClickListener {
-            val action =ThirdFragmentDirections.actionThirdFragmentToAdvertFragment()
+            val action = ThirdFragmentDirections.actionThirdFragmentToAdvertFragment()
             findNavController().navigate(action)
         }
 
@@ -41,8 +41,9 @@ class ThirdFragment : Fragment() {
         }
 
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId==R.id.account_item){
+        if (item.itemId == R.id.account_item) {
             val action = ThirdFragmentDirections.actionThirdFragmentToProfileFragment()
             findNavController().navigate(action)
         }

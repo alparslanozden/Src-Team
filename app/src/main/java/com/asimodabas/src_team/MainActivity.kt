@@ -14,10 +14,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val menuInflater = getMenuInflater().inflate(R.menu.src_menu,menu)
+        val menuInflater = getMenuInflater().inflate(R.menu.src_menu, menu)
         return super.onCreateOptionsMenu(menu)
-
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         return super.onOptionsItemSelected(item)

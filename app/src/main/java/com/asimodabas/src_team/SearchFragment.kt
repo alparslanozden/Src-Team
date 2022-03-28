@@ -24,7 +24,7 @@ class SearchFragment : Fragment() {
 
         setHasOptionsMenu(true)
         auth = Firebase.auth
-        db=Firebase.firestore
+        db = Firebase.firestore
 
     }
 
@@ -35,28 +35,29 @@ class SearchFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId==R.id.account_item){
+        if (item.itemId == R.id.account_item) {
             val action = SearchFragmentDirections.actionSearchFragmentToProfileFragment()
             findNavController().navigate(action)
         }
         return super.onOptionsItemSelected(item)
     }
 
-    fun getData(){
+    fun getData() {
 
         db.collection("Records").addSnapshotListener { value, error ->
-            if (error!=null){
+            if (error != null) {
 
-                Toast.makeText(context,error.localizedMessage,Toast.LENGTH_LONG).show()
+                Toast.makeText(context, error.localizedMessage, Toast.LENGTH_LONG).show()
 
-            }else{
+            } else {
 
-                if (value !=null){
-                    if (!value.isEmpty){
+                if (value != null) {
+                    if (!value.isEmpty) {
 
                         val documents = value.documents
-                        for (document in documents){
+                        for (document in documents) {
                             //casting
                             val name = document.get("name") as String
                             val surname = document.get("surname") as String
