@@ -7,14 +7,20 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_second.*
 
 
 class SecondFragment : Fragment() {
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        auth=Firebase.auth
         setHasOptionsMenu(true)
 
     }
@@ -45,6 +51,11 @@ class SecondFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.account_item) {
             val action = SecondFragmentDirections.actionSecondFragmentToProfileFragment()
+            findNavController().navigate(action)
+        }else if(item.itemId == R.id.logOut_item){
+
+            auth.signOut()
+            val action = SecondFragmentDirections.actionSecondFragmentToLoginFragment()
             findNavController().navigate(action)
         }
         return super.onOptionsItemSelected(item)

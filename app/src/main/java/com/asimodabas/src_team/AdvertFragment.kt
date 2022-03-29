@@ -75,6 +75,11 @@ class AdvertFragment : Fragment() {
         if (item.itemId == R.id.account_item) {
             val action = AdvertFragmentDirections.actionAdvertFragmentToProfileFragment()
             findNavController().navigate(action)
+        }else if(item.itemId == R.id.logOut_item){
+
+            auth.signOut()
+            val action = AdvertFragmentDirections.actionAdvertFragmentToLoginFragment()
+            findNavController().navigate(action)
         }
         return super.onOptionsItemSelected(item)
     }

@@ -40,6 +40,11 @@ class SearchFragment : Fragment() {
         if (item.itemId == R.id.account_item) {
             val action = SearchFragmentDirections.actionSearchFragmentToProfileFragment()
             findNavController().navigate(action)
+        }else if(item.itemId == R.id.logOut_item){
+
+            auth.signOut()
+            val action = SearchFragmentDirections.actionSearchFragmentToLoginFragment()
+            findNavController().navigate(action)
         }
         return super.onOptionsItemSelected(item)
     }

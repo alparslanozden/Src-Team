@@ -23,8 +23,6 @@ class LoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setHasOptionsMenu(true)
-
         auth = Firebase.auth
 
         //Remember username password
@@ -74,8 +72,6 @@ class LoginFragment : Fragment() {
             }
         }
 
-
-
         createButton.setOnClickListener {
 
             val action = LoginFragmentDirections.actionLoginFragmentToCreateFragment()
@@ -84,13 +80,6 @@ class LoginFragment : Fragment() {
 
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.account_item) {
-            val action = LoginFragmentDirections.actionLoginFragmentToProfileFragment()
-            findNavController().navigate(action)
-        }
-        return super.onOptionsItemSelected(item)
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

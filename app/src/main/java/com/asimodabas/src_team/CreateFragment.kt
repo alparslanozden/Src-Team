@@ -26,7 +26,6 @@ class CreateFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setHasOptionsMenu(true)
 
         auth = Firebase.auth
         firestore = Firebase.firestore
@@ -102,14 +101,6 @@ class CreateFragment : Fragment() {
                 Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_LONG).show()
             }
         }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.account_item) {
-            val action = CreateFragmentDirections.actionCreateFragmentToProfileFragment()
-            findNavController().navigate(action)
-        }
-        return super.onOptionsItemSelected(item)
     }
 
 }
