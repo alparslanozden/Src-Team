@@ -47,10 +47,10 @@ class CreateFragment : Fragment() {
         fcreateButton.setOnClickListener {
 
             if (
-                nameEditText.text.toString() != null &&
-                surnameEditText.text.toString() != null &&
-                emailEditText.text.toString() != null &&
-                passwordEditText.text.toString() != null
+                nameEditText.text.toString() != "" &&
+                surnameEditText.text.toString() != "" &&
+                emailEditText.text.toString() != "" &&
+                passwordEditText.text.toString() != ""
             ) {
                 firebaseSaver()
 
@@ -65,6 +65,8 @@ class CreateFragment : Fragment() {
                 }.addOnFailureListener {
                     Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
                 }
+            }else{
+                Toast.makeText(requireContext(), "Lütfen boşlukları eksiksiz doldurun.", Toast.LENGTH_LONG).show()
             }
         }
 
@@ -77,14 +79,9 @@ class CreateFragment : Fragment() {
 
             val name = nameEditText.text.toString()
             val surname = surnameEditText.text.toString()
-            val email = it.email
+            val email = emailEditText.text.toString()
             val gender = radioGroup.checkedRadioButtonId
             val date = FieldValue.serverTimestamp()
-            //  val address = editTextTextPersonName2.text.toString()
-            //  val clock = editTextTextPersonName4.text.toString()
-            //  val Activtiydate = editTextTextPersonName3.text.toString()
-            //  val SearchActivity = editTextTextPersonName5.text.toString()
-            //  val Notes = editTextTextPersonName6.text.toString()
 
             val dataMap = HashMap<String, Any>()
             dataMap.put("name", name)
@@ -92,11 +89,6 @@ class CreateFragment : Fragment() {
             dataMap.put("email", email!!)
             dataMap.put("gender", gender)
             dataMap.put("date", date)
-            // dataMap.put("adres",address)
-            // dataMap.put("clock",clock)
-            // dataMap.put("Activtiydate",Activtiydate)
-            // dataMap.put("SearchActivity",SearchActivity)
-            // dataMap.put("Notes",Notes)
 
             firestore.collection("Records").add(dataMap).addOnSuccessListener {
 
@@ -104,11 +96,6 @@ class CreateFragment : Fragment() {
                 surnameEditText.setText("")
                 emailEditText.setText("")
                 passwordEditText.setText("")
-                // editTextTextPersonName2.setText("")
-                // editTextTextPersonName4.setText("")
-                // editTextTextPersonName6.setText("")
-                // editTextTextPersonName3.setText("")
-                // editTextTextPersonName5.setText("")
                 radioGroup.clearCheck()
 
             }.addOnFailureListener {

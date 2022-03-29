@@ -7,9 +7,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.fragment_advert.*
 import kotlinx.android.synthetic.main.fragment_create.*
 
@@ -18,6 +21,7 @@ class AdvertFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var storage: FirebaseStorage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,7 @@ class AdvertFragment : Fragment() {
 
         auth = Firebase.auth
         firestore = Firebase.firestore
+        storage = Firebase.storage
 
     }
 
@@ -43,8 +48,21 @@ class AdvertFragment : Fragment() {
 
         advSearchButton.setOnClickListener {
 
-            val action = AdvertFragmentDirections.actionAdvertFragmentToSearchFragment()
-            findNavController().navigate(action)
+            if (
+                editTextTextPersonName2.text.toString() != "" &&
+                editTextTextPersonName4.text.toString() != "" &&
+                editTextTextPersonName3.text.toString() != "" &&
+                editTextTextPersonName5.text.toString() != "" &&
+                editTextTextPersonName6.text.toString() != ""
+            ){
+                firebaseSaverSearch()
+
+                val action = AdvertFragmentDirections.actionAdvertFragmentToSearchFragment()
+                findNavController().navigate(action)
+            }else{
+                Toast.makeText(requireContext(), "Lütfen boşlukları eksiksiz doldurun.", Toast.LENGTH_LONG).show()
+
+            }
         }
         locationButton.setOnClickListener {
             val action = AdvertFragmentDirections.actionAdvertFragmentToMapsActivity()
@@ -61,5 +79,38 @@ class AdvertFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
+    fun firebaseSaverSearch() {
+
+        val user = auth.currentUser
+        user?.let {
+
+              val address = editTextTextPersonName2.text.toString()
+              val clock = editTextTextPersonName4.text.toString()
+              val Activtiydate = editTextTextPersonName3.text.toString()
+              val SearchActivity = editTextTextPersonName5.text.toString()
+              val Notes = editTextTextPersonName6.text.toString()
+
+            val dataMap = HashMap<String, Any>()
+
+             dataMap.put("adres",address)
+             dataMap.put("clock",clock)
+             dataMap.put("Activtiydate",Activtiydate)
+             dataMap.put("SearchActivity",SearchActivity)
+             dataMap.put("Notes",Notes)
+
+            firestore.collection("Search").add(dataMap).addOnSuccessListener {
+
+                 editTextTextPersonName2.setText("")
+                 editTextTextPersonName4.setText("")
+                 editTextTextPersonName6.setText("")
+                 editTextTextPersonName3.setText("")
+                 editTextTextPersonName5.setText("")
+                radioGroup.clearCheck()
+
+            }.addOnFailureListener {
+                Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 
 }
