@@ -20,7 +20,7 @@ class SecondFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        auth=Firebase.auth
+        auth = Firebase.auth
         setHasOptionsMenu(true)
 
     }
@@ -52,7 +52,7 @@ class SecondFragment : Fragment() {
         if (item.itemId == R.id.account_item) {
             val action = SecondFragmentDirections.actionSecondFragmentToProfileFragment()
             findNavController().navigate(action)
-        }else if(item.itemId == R.id.logOut_item){
+        } else if (item.itemId == R.id.logOut_item) {
 
             auth.signOut()
             val action = SecondFragmentDirections.actionSecondFragmentToLoginFragment()

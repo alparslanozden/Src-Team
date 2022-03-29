@@ -25,8 +25,7 @@ class CreateFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
+        
         auth = Firebase.auth
         firestore = Firebase.firestore
 

@@ -23,6 +23,7 @@ class SearchFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         setHasOptionsMenu(true)
+
         auth = Firebase.auth
         db = Firebase.firestore
 
@@ -40,7 +41,7 @@ class SearchFragment : Fragment() {
         if (item.itemId == R.id.account_item) {
             val action = SearchFragmentDirections.actionSearchFragmentToProfileFragment()
             findNavController().navigate(action)
-        }else if(item.itemId == R.id.logOut_item){
+        } else if (item.itemId == R.id.logOut_item) {
 
             auth.signOut()
             val action = SearchFragmentDirections.actionSearchFragmentToLoginFragment()

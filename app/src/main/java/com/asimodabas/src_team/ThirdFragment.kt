@@ -53,7 +53,7 @@ class ThirdFragment : Fragment() {
         if (item.itemId == R.id.account_item) {
             val action = ThirdFragmentDirections.actionThirdFragmentToProfileFragment()
             findNavController().navigate(action)
-        }else if(item.itemId == R.id.logOut_item){
+        } else if (item.itemId == R.id.logOut_item) {
 
             auth.signOut()
             val action = ThirdFragmentDirections.actionThirdFragmentToLoginFragment()
