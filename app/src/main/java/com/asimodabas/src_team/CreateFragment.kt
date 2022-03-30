@@ -25,7 +25,7 @@ class CreateFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+
         auth = Firebase.auth
         firestore = Firebase.firestore
 
@@ -63,8 +63,12 @@ class CreateFragment : Fragment() {
                 }.addOnFailureListener {
                     Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
                 }
-            }else{
-                Toast.makeText(requireContext(), "Lütfen boşlukları eksiksiz doldurun.", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Lütfen boşlukları eksiksiz doldurun.",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
 

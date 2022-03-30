@@ -46,7 +46,6 @@ class ThirdFragment : Fragment() {
             findNavController().navigate(action)
 
         }
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

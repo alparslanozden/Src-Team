@@ -50,30 +50,4 @@ class SearchFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun getData() {
-
-        db.collection("Records").addSnapshotListener { value, error ->
-            if (error != null) {
-
-                Toast.makeText(context, error.localizedMessage, Toast.LENGTH_LONG).show()
-
-            } else {
-
-                if (value != null) {
-                    if (!value.isEmpty) {
-
-                        val documents = value.documents
-                        for (document in documents) {
-                            //casting
-                            val name = document.get("name") as String
-                            val surname = document.get("surname") as String
-
-                        }
-                    }
-                }
-            }
-        }
-
-    }
-
 }

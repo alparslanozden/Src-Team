@@ -54,13 +54,17 @@ class AdvertFragment : Fragment() {
                 editTextTextPersonName3.text.toString() != "" &&
                 editTextTextPersonName5.text.toString() != "" &&
                 editTextTextPersonName6.text.toString() != ""
-            ){
+            ) {
                 firebaseSaverSearch()
 
                 val action = AdvertFragmentDirections.actionAdvertFragmentToSearchFragment()
                 findNavController().navigate(action)
-            }else{
-                Toast.makeText(requireContext(), "Lütfen boşlukları eksiksiz doldurun.", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Lütfen boşlukları eksiksiz doldurun.",
+                    Toast.LENGTH_LONG
+                ).show()
 
             }
         }
@@ -75,7 +79,7 @@ class AdvertFragment : Fragment() {
         if (item.itemId == R.id.account_item) {
             val action = AdvertFragmentDirections.actionAdvertFragmentToProfileFragment()
             findNavController().navigate(action)
-        }else if(item.itemId == R.id.logOut_item){
+        } else if (item.itemId == R.id.logOut_item) {
 
             auth.signOut()
             val action = AdvertFragmentDirections.actionAdvertFragmentToLoginFragment()
@@ -89,27 +93,27 @@ class AdvertFragment : Fragment() {
         val user = auth.currentUser
         user?.let {
 
-              val address = editTextTextPersonName2.text.toString()
-              val clock = editTextTextPersonName4.text.toString()
-              val Activtiydate = editTextTextPersonName3.text.toString()
-              val SearchActivity = editTextTextPersonName5.text.toString()
-              val Notes = editTextTextPersonName6.text.toString()
+            val address = editTextTextPersonName2.text.toString()
+            val clock = editTextTextPersonName4.text.toString()
+            val Activtiydate = editTextTextPersonName3.text.toString()
+            val SearchActivity = editTextTextPersonName5.text.toString()
+            val Notes = editTextTextPersonName6.text.toString()
 
             val dataMap = HashMap<String, Any>()
 
-             dataMap.put("adres",address)
-             dataMap.put("clock",clock)
-             dataMap.put("Activtiydate",Activtiydate)
-             dataMap.put("SearchActivity",SearchActivity)
-             dataMap.put("Notes",Notes)
+            dataMap.put("adres", address)
+            dataMap.put("clock", clock)
+            dataMap.put("Activtiydate", Activtiydate)
+            dataMap.put("SearchActivity", SearchActivity)
+            dataMap.put("Notes", Notes)
 
             firestore.collection("Search").add(dataMap).addOnSuccessListener {
 
-                 editTextTextPersonName2.setText("")
-                 editTextTextPersonName4.setText("")
-                 editTextTextPersonName6.setText("")
-                 editTextTextPersonName3.setText("")
-                 editTextTextPersonName5.setText("")
+                editTextTextPersonName2.setText("")
+                editTextTextPersonName4.setText("")
+                editTextTextPersonName6.setText("")
+                editTextTextPersonName3.setText("")
+                editTextTextPersonName5.setText("")
                 radioGroup.clearCheck()
 
             }.addOnFailureListener {
